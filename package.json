@@ -5,7 +5,7 @@
     "ng": "ng",
     "ng-high-memory": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng build --configuration production",
     "start": "ng serve",
-    "build": "npm install --force && ng build --configuration production",
+    "build": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
