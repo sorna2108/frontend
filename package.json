@@ -1,10 +1,11 @@
 {
-  "name": "routing-demo",
+  "name": "foodapp",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "ng-high-memory": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng build --configuration production",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm install --force && ng build --configuration production",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
