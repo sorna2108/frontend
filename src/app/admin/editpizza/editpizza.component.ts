@@ -98,7 +98,7 @@ export class EditpizzaComponent implements OnInit {
       formData.append('file', this.image);
 
       // *************
-      this.http.post<any>('http://localhost:3000/admin/editpizzawithimage', formData).subscribe(
+      this.http.post<any>('https://database-wqgm.onrender.com', formData).subscribe(
         (res) => {
           this.adminService.avail = true;
           this.adminService.msg = "Successfully Edited a pizza!!!"

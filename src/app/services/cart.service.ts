@@ -10,13 +10,13 @@ export class CartService {
 
   public avail:boolean = false;
   public msg:string="";
-  private baseUri: string = "http://localhost:3000";
+  private baseUri: string = "https://database-wqgm.onrender.com";
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 
 
   addPizza(body:any) {
-   
+
     return this.http.post('http://127.0.0.1:3000/addtocart', body, {
       observe: 'body',
       headers: new HttpHeaders().append('Content-Type', 'application/json')
