@@ -121,7 +121,7 @@ export class EditpizzaComponent implements OnInit {
     }
     else {
 
-      this.http.get<any>('http://localhost:3000/admin/editpizzawithoutimage?id=' + this.id + '&pizzaname=' + this.pn + '&pizzasize=' + this.ps + '&pizzaprice=' + this.pp
+      this.http.get<any>('https://database-wqgm.onrender.com/admin/editpizzawithoutimage?id=' + this.id + '&pizzaname=' + this.pn + '&pizzasize=' + this.ps + '&pizzaprice=' + this.pp
       ).subscribe(
         (res) => {
           this.adminService.avail = true;
