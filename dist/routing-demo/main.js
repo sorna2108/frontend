@@ -738,7 +738,7 @@ class AdminService {
         this.http = http;
         this.avail = false;
         this.msg = "";
-        this.baseUri = "https://database-wqgm.onrender.com";
+        this.baseUri = "https://database-wqgm.onrender.com/";
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     check() {
@@ -1686,7 +1686,7 @@ class AddpizzaComponent {
         formData.append('pizzaname', f.controls.pizzaname.value);
         formData.append('pizzasize', f.controls.pizzasize.value);
         formData.append('pizzaprice', f.controls.pizzaprice.value);
-        this.http.post('https://database-wqgm.onrender.com', formData).subscribe((res) => {
+        this.http.post('https://database-wqgm.onrender.com/', formData).subscribe((res) => {
             this.adminService.avail = true;
             this.adminService.msg = "Successfully Added a pizza!!!";
             this.router.navigate(['/admin']);
@@ -3409,7 +3409,7 @@ class CartService {
         this.router = router;
         this.avail = false;
         this.msg = "";
-        this.baseUri = "https://database-wqgm.onrender.com";
+        this.baseUri = "https://database-wqgm.onrender.com/";
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     addPizza(body) {
@@ -3535,7 +3535,7 @@ class EditpizzaComponent {
             // console.log("yes image");
             formData.append('file', this.image);
             // *************
-            this.http.post('https://database-wqgm.onrender.com', formData).subscribe((res) => {
+            this.http.post('https://database-wqgm.onrender.com/', formData).subscribe((res) => {
                 this.adminService.avail = true;
                 this.adminService.msg = "Successfully Edited a pizza!!!";
                 this.router.navigate(['/admin']);
@@ -3548,7 +3548,7 @@ class EditpizzaComponent {
             });
         }
         else {
-            this.http.get('https://database-wqgm.onrender.com/admin/editpizzawithoutimage?id=' + this.id + '&pizzaname=' + this.pn + '&pizzasize=' + this.ps + '&pizzaprice=' + this.pp).subscribe((res) => {
+            this.http.get('https://database-wqgm.onrender.com//admin/editpizzawithoutimage?id=' + this.id + '&pizzaname=' + this.pn + '&pizzasize=' + this.ps + '&pizzaprice=' + this.pp).subscribe((res) => {
                 this.adminService.avail = true;
                 this.adminService.msg = "Successfully Edited a pizza!!!";
                 this.router.navigate(['/admin']);
@@ -4029,7 +4029,7 @@ class AuthService {
         this.router = router;
         this.avail = false;
         this.msg = "";
-        this.baseUri = "https://database-wqgm.onrender.com";
+        this.baseUri = "https://database-wqgm.onrender.com/";
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     check() {

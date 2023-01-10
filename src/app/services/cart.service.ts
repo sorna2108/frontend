@@ -10,7 +10,7 @@ export class CartService {
 
   public avail:boolean = false;
   public msg:string="";
-  private baseUri: string = "https://database-wqgm.onrender.com";
+  private baseUri: string = "https://database-wqgm.onrender.com/";
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient, private router: Router) { }
 
