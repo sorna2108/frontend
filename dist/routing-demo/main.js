@@ -738,7 +738,7 @@ class AdminService {
         this.http = http;
         this.avail = false;
         this.msg = "";
-        this.baseUri = "http://localhost:3000/admin";
+        this.baseUri = "https://database-wqgm.onrender.com";
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     check() {
@@ -1686,7 +1686,7 @@ class AddpizzaComponent {
         formData.append('pizzaname', f.controls.pizzaname.value);
         formData.append('pizzasize', f.controls.pizzasize.value);
         formData.append('pizzaprice', f.controls.pizzaprice.value);
-        this.http.post('http://localhost:3000/admin/addpizza', formData).subscribe((res) => {
+        this.http.post('https://database-wqgm.onrender.com', formData).subscribe((res) => {
             this.adminService.avail = true;
             this.adminService.msg = "Successfully Added a pizza!!!";
             this.router.navigate(['/admin']);
@@ -2949,7 +2949,7 @@ class RegisterComponent {
     }
 }
 RegisterComponent.ɵfac = function RegisterComponent_Factory(t) { return new (t || RegisterComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"])); };
-RegisterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RegisterComponent, selectors: [["app-register"]], decls: 41, vars: 6, consts: [["lang", "en"], ["href", "https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i", "rel", "stylesheet"], ["rel", "stylesheet", "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"], [1, "container"], [1, "page-wrapper", "bg-gra-01", "p-t-180", "p-b-100", "font-poppins"], [1, "wrapper", "wrapper--w780"], [1, "card", "card-3", "iregister"], [1, "card-body"], [1, "title"], ["style", "color: red;", 4, "ngIf"], [3, "ngSubmit"], ["f", "ngForm"], [1, "input-group"], ["type", "text", "placeholder", "Name", "name", "name", "autocomplete", "off", "ngModel", "", "required", "", 1, "input--style-3"], ["name", "ngModel"], ["type", "email", "placeholder", "Email", "name", "email", "autocomplete", "off", "ngModel", "", "email", "", "required", "", "pattern", "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$", 1, "input--style-3"], ["email", "ngModel"], ["type", "text", "placeholder", "Phone", "name", "contact", "pattern", "[0-9]{3}[0-9]{2}[0-9]{4}", "autocomplete", "off", "ngModel", "", "required", "", 1, "input--style-3"], ["contact", "ngModel"], ["type", "password", "placeholder", "Password (Ex:Msd@7781)", "name", "p1", "id", "p1", "autocomplete", "off", "title", "Plaese enter valid and strong password", "ngModel", "", "required", "", 1, "input--style-3"], ["p1", "ngModel"], ["type", "password", "placeholder", "Re-enter password", "name", "p2", "id", "p2", "title", "Plaese enter valid and strong password", "autocomplete", "off", "ngModel", "", "required", "", 1, "input--style-3"], ["p2", "ngModel"], [1, "p-t-10"], ["type", "submit", 1, "btn", "btn--pill", "btn--green", 3, "disabled"], ["type", "reset", 1, "btn", "btn--pill", "btn--green", 2, "margin-left", "10px"], [1, "niche"], [3, "routerLink"], ["aria-hidden", "true", 1, "fa", "fa-arrow-circle-left", 2, "color", "white"], ["id", "fp", 3, "routerLink"], [2, "color", "red"]], template: function RegisterComponent_Template(rf, ctx) { if (rf & 1) {
+RegisterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: RegisterComponent, selectors: [["app-register"]], decls: 41, vars: 6, consts: [["lang", "en"], ["href", "https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i", "rel", "stylesheet"], ["rel", "stylesheet", "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"], [1, "container"], [1, "page-wrapper", "bg-gra-01", "p-t-180", "p-b-100", "font-poppins"], [1, "wrapper", "wrapper--w780"], [1, "card", "card-3", "iregister"], [1, "card-body"], [1, "title"], ["style", "color: red;", 4, "ngIf"], [3, "ngSubmit"], ["f", "ngForm"], [1, "input-group"], ["type", "text", "placeholder", "Name", "name", "name", "autocomplete", "off", "ngModel", "", "required", "", 1, "input--style-3"], ["name", "ngModel"], ["type", "email", "placeholder", "Email", "name", "email", "autocomplete", "off", "ngModel", "", "email", "", "required", "", "pattern", "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$", 1, "input--style-3"], ["email", "ngModel"], ["type", "text", "placeholder", "Phone", "name", "contact", "pattern", "[0-9]{3}[0-9]{3}[0-9]{4}", "autocomplete", "off", "ngModel", "", "required", "", 1, "input--style-3"], ["contact", "ngModel"], ["type", "password", "placeholder", "Password (Ex:Msd@7781)", "name", "p1", "id", "p1", "autocomplete", "off", "title", "Plaese enter valid and strong password", "ngModel", "", "required", "", 1, "input--style-3"], ["p1", "ngModel"], ["type", "password", "placeholder", "Re-enter password", "name", "p2", "id", "p2", "title", "Plaese enter valid and strong password", "autocomplete", "off", "ngModel", "", "required", "", 1, "input--style-3"], ["p2", "ngModel"], [1, "p-t-10"], ["type", "submit", 1, "btn", "btn--pill", "btn--green", 3, "disabled"], ["type", "reset", 1, "btn", "btn--pill", "btn--green", 2, "margin-left", "10px"], [1, "niche"], [3, "routerLink"], ["aria-hidden", "true", 1, "fa", "fa-arrow-circle-left", 2, "color", "white"], ["id", "fp", 3, "routerLink"], [2, "color", "red"]], template: function RegisterComponent_Template(rf, ctx) { if (rf & 1) {
         const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "html", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "head");
@@ -3409,7 +3409,7 @@ class CartService {
         this.router = router;
         this.avail = false;
         this.msg = "";
-        this.baseUri = "http://localhost:3000";
+        this.baseUri = "https://database-wqgm.onrender.com";
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     addPizza(body) {
@@ -3535,7 +3535,7 @@ class EditpizzaComponent {
             // console.log("yes image");
             formData.append('file', this.image);
             // *************
-            this.http.post('http://localhost:3000/admin/editpizzawithimage', formData).subscribe((res) => {
+            this.http.post('https://database-wqgm.onrender.com', formData).subscribe((res) => {
                 this.adminService.avail = true;
                 this.adminService.msg = "Successfully Edited a pizza!!!";
                 this.router.navigate(['/admin']);
@@ -3548,7 +3548,7 @@ class EditpizzaComponent {
             });
         }
         else {
-            this.http.get('http://localhost:3000/admin/editpizzawithoutimage?id=' + this.id + '&pizzaname=' + this.pn + '&pizzasize=' + this.ps + '&pizzaprice=' + this.pp).subscribe((res) => {
+            this.http.get('https://database-wqgm.onrender.com/admin/editpizzawithoutimage?id=' + this.id + '&pizzaname=' + this.pn + '&pizzasize=' + this.ps + '&pizzaprice=' + this.pp).subscribe((res) => {
                 this.adminService.avail = true;
                 this.adminService.msg = "Successfully Edited a pizza!!!";
                 this.router.navigate(['/admin']);
@@ -4029,7 +4029,7 @@ class AuthService {
         this.router = router;
         this.avail = false;
         this.msg = "";
-        this.baseUri = "http://localhost:3000";
+        this.baseUri = "https://database-wqgm.onrender.com";
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     check() {
