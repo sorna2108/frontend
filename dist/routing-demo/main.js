@@ -463,7 +463,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/admin.service */ "AJ6+");
+/* harmony import */ var _services_admin_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/admin.service */ "AJ6+");
 /* harmony import */ var _ind_ind_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ind/ind.component */ "8K20");
 
 
@@ -496,19 +496,19 @@ class ViewoneuserComponent {
             this.router.navigate(['/login']);
         }
         else {
-            this.adminService.getOneCartItemUser(this.userid).subscribe(data => {
+            this.adminService.getOneCartItemUser(this.userid).subscribe((data) => {
                 console.log(data);
-                this.user = data['user'];
-                this.name = this.user['name'];
-                this.email = this.user['email'];
-                this.contact = this.user['contact'];
+                this.user = data.user;
+                this.name = this.user.name;
+                this.email = this.user.email;
+                this.contact = this.user.contact;
             }, error => {
                 console.log(error);
             });
         }
     }
 }
-ViewoneuserComponent.ɵfac = function ViewoneuserComponent_Factory(t) { return new (t || ViewoneuserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"])); };
+ViewoneuserComponent.ɵfac = function ViewoneuserComponent_Factory(t) { return new (t || ViewoneuserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"])); };
 ViewoneuserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ViewoneuserComponent, selectors: [["app-viewoneuser"]], decls: 24, vars: 3, consts: [["lang", "en"], ["charset", "utf-8"], ["name", "viewport", "content", "width=device-width, initial-scale=1, shrink-to-fit=no"], ["rel", "stylesheet", "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", "integrity", "sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", "crossorigin", "anonymous"], [1, "table", "table-hover", "w-50", "h-30", 2, "background-color", "white", "box-shadow", "0px 0px 19px 5px rgba(0, 0, 0, 0.5)"], ["scope", "row"]], template: function ViewoneuserComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "html", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "head");
@@ -563,7 +563,7 @@ ViewoneuserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdef
                 templateUrl: './viewoneuser.component.html',
                 styleUrls: ['./viewoneuser.component.css']
             }]
-    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"] }]; }, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: _services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"] }]; }, null); })();
 
 
 /***/ }),
@@ -1630,7 +1630,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/admin.service */ "AJ6+");
+/* harmony import */ var _services_admin_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/admin.service */ "AJ6+");
 /* harmony import */ var _ind_ind_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ind/ind.component */ "8K20");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
@@ -1686,14 +1686,14 @@ class AddpizzaComponent {
         formData.append('pizzaname', f.controls.pizzaname.value);
         formData.append('pizzasize', f.controls.pizzasize.value);
         formData.append('pizzaprice', f.controls.pizzaprice.value);
-        this.http.post('https://database-wqgm.onrender.com', formData).subscribe((res) => {
+        this.http.post('https://database-wqgm.onrender.com/admin/addpizza', formData).subscribe((res) => {
             this.adminService.avail = true;
             this.adminService.msg = "Successfully Added a pizza!!!";
             this.router.navigate(['/admin']);
-            // console.log(res)
+            console.log(res);
         }, (error) => {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpErrorResponse"]) {
-                this.router.navigate(['/login']);
+                this.router.navigate(['/admin']);
             }
             console.log(error);
         });
@@ -1706,7 +1706,7 @@ class AddpizzaComponent {
         }
     }
 }
-AddpizzaComponent.ɵfac = function AddpizzaComponent_Factory(t) { return new (t || AddpizzaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"])); };
+AddpizzaComponent.ɵfac = function AddpizzaComponent_Factory(t) { return new (t || AddpizzaComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"])); };
 AddpizzaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: AddpizzaComponent, selectors: [["app-addpizza"]], decls: 43, vars: 2, consts: [["charset", "utf-8"], ["http-equiv", "X-UA-Compatible", "content", "IE=edge"], ["name", "viewport", "content", "width=device-width, initial-scale=1"], [1, "content"], [1, "container"], [1, "contactFrom"], [3, "ngSubmit"], ["f", "ngForm"], ["style", "color: red;", 4, "ngIf"], [1, "inputBox"], ["type", "text", "name", "pizzaname", "ngModel", "", "required", ""], ["pizzaname", "ngModel"], ["name", "pizzasize", "ngModel", "", "required", ""], ["pizzasize", "ngModel"], ["value", "small"], ["value", "medium"], ["value", "large"], ["type", "number", "name", "pizzaprice", "min", "1", "ngModel", "", "required", ""], ["pizzaprice", "ngModel"], ["type", "file", "name", "pizzapic", "title", "choose pizza image", "ngModel", "", "required", "", 3, "change"], ["pizzapic", "ngModel"], ["type", "submit", "value", "submit", 3, "disabled"], [2, "color", "red"]], template: function AddpizzaComponent_Template(rf, ctx) { if (rf & 1) {
         const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "html");
@@ -1785,7 +1785,7 @@ AddpizzaComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefine
                 templateUrl: './addpizza.component.html',
                 styleUrls: ['./addpizza.component.css']
             }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"] }]; }, null); })();
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: _services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"] }]; }, null); })();
 
 
 /***/ }),
@@ -2057,7 +2057,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/admin.service */ "AJ6+");
+/* harmony import */ var _services_admin_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/admin.service */ "AJ6+");
 /* harmony import */ var _ind_ind_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ind/ind.component */ "8K20");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
@@ -2133,9 +2133,9 @@ class ViewuserComponent {
         });
     }
     readUser() {
-        this.adminService.getAllUser().subscribe(data => {
-            this.arr = data['msg'];
-            this.users = data['msg'];
+        this.adminService.getAllUser().subscribe((data) => {
+            this.arr = data.msg;
+            this.users = data.msg;
             // console.log(data);
         }, (error) => {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpErrorResponse"]) {
@@ -2146,11 +2146,11 @@ class ViewuserComponent {
         // console.log();
     }
     block(user) {
-        var userid = user._id;
+        const userid = user._id;
         this.adminService.blockuser(userid).subscribe(data => {
             // console.log(data);
             this.adminService.avail = true;
-            this.adminService.msg = "Successfully Blocked User!!!";
+            this.adminService.msg = 'Successfully Blocked User!!!';
             this.router.navigate(['/admin']);
         }, (error) => {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpErrorResponse"]) {
@@ -2160,11 +2160,11 @@ class ViewuserComponent {
         });
     }
     unblock(user) {
-        var userid = user._id;
+        const userid = user._id;
         this.adminService.unblockuser(userid).subscribe(data => {
             // console.log(data);
             this.adminService.avail = true;
-            this.adminService.msg = "Successfully Unblocked User!!!";
+            this.adminService.msg = 'Successfully Unblocked User!!!';
             this.router.navigate(['/admin']);
         }, (error) => {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpErrorResponse"]) {
@@ -2174,11 +2174,11 @@ class ViewuserComponent {
         });
     }
     delete(user) {
-        var userid = user._id;
+        const userid = user._id;
         this.adminService.deleteuser(userid).subscribe(data => {
             // console.log(data);
             this.adminService.avail = true;
-            this.adminService.msg = "Successfully Deleted User!!!";
+            this.adminService.msg = 'Successfully Deleted User!!!';
             this.router.navigate(['/admin']);
         }, (error) => {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpErrorResponse"]) {
@@ -2188,7 +2188,7 @@ class ViewuserComponent {
         });
     }
 }
-ViewuserComponent.ɵfac = function ViewuserComponent_Factory(t) { return new (t || ViewuserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"])); };
+ViewuserComponent.ɵfac = function ViewuserComponent_Factory(t) { return new (t || ViewuserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"])); };
 ViewuserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: ViewuserComponent, selectors: [["app-viewuser"]], decls: 24, vars: 1, consts: [["charset", "utf-8"], ["name", "viewport", "content", "width=device-width, initial-scale=1, shrink-to-fit=no"], ["rel", "stylesheet", "href", "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", "integrity", "sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", "crossorigin", "anonymous"], [1, "table", "table-hover", "w-50", 2, "background-color", "white", "margin-top", "100px", "box-shadow", "0px 0px 19px 5px rgba(0, 0, 0, 0.5)"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "btn", "btn-link", 3, "disabled", "click"], ["aria-hidden", "true", 1, "fa", "fa-ban"], ["aria-hidden", "true", 1, "fa", "fa-unlock"], [1, "btn", "btn-link", 3, "click"], ["aria-hidden", "true", 1, "fa", "fa-trash"]], template: function ViewuserComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "html");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "head");
@@ -2238,7 +2238,7 @@ ViewuserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefine
                 templateUrl: './viewuser.component.html',
                 styleUrls: ['./viewuser.component.css']
             }]
-    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"] }]; }, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: _services_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"] }]; }, null); })();
 
 
 /***/ }),
