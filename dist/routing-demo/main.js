@@ -4125,7 +4125,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminhomeComponent", function() { return AdminhomeComponent; });
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/admin.service */ "AJ6+");
+/* harmony import */ var _services_admin_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/admin.service */ "AJ6+");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _ind_ind_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ind/ind.component */ "8K20");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
@@ -4241,7 +4241,7 @@ class AdminhomeComponent {
         this.router.navigate(['admin/viewoneuser']);
     }
 }
-AdminhomeComponent.ɵfac = function AdminhomeComponent_Factory(t) { return new (t || AdminhomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_2__["AdminService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
+AdminhomeComponent.ɵfac = function AdminhomeComponent_Factory(t) { return new (t || AdminhomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_admin_service__WEBPACK_IMPORTED_MODULE_2__["AdminService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
 AdminhomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: AdminhomeComponent, selectors: [["app-adminhome"]], decls: 30, vars: 2, consts: [["href", "https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i", "rel", "stylesheet"], ["href", "https://fonts.googleapis.com/css?family=Audiowide&display=swap", "rel", "stylesheet"], ["href", "https://fonts.googleapis.com/css?family=Concert+One|Oswald|Quicksand&display=swap", "rel", "stylesheet"], ["href", "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap", "rel", "stylesheet"], ["rel", "stylesheet", "href", "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"], ["rel", "stylesheet", "href", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"], ["name", "viewport", "content", "width=device-width, initial-scale=1"], [1, "header"], ["class", "alert alert-success alert-dismissible", 4, "ngIf"], [1, "text-center"], [1, "table", "table-hover", "w-50", 2, "background-color", "white", "box-shadow", "0px 0px 19px 5px rgba(0, 0, 0, 0.5)"], ["scope", "col"], [4, "ngFor", "ngForOf"], [1, "alert", "alert-success", "alert-dismissible"], ["type", "button", "data-dismiss", "alert", 1, "close"], ["scope", "row"], [1, "text-danger", 3, "click"], [1, "btn", "btn-link", 3, "click"], ["aria-hidden", "true", 1, "fa", "fa-eye"], ["aria-hidden", "true", 1, "fa", "fa-trash"]], template: function AdminhomeComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "html");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "head");
@@ -4300,7 +4300,7 @@ AdminhomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefin
                 templateUrl: './adminhome.component.html',
                 styleUrls: ['./adminhome.component.css']
             }]
-    }], function () { return [{ type: src_app_services_admin_service__WEBPACK_IMPORTED_MODULE_2__["AdminService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }]; }, null); })();
+    }], function () { return [{ type: _services_admin_service__WEBPACK_IMPORTED_MODULE_2__["AdminService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }]; }, null); })();
 
 
 /***/ }),
