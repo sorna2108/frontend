@@ -98,7 +98,7 @@ export class EditpizzaComponent implements OnInit {
       formData.append('file', this.image);
 
       // *************
-      this.http.post<any>('https://database-wqgm.onrender.com', formData).subscribe(
+      this.http.post<any>('https://backend-j2g3.onrender.com', formData).subscribe(
         (res) => {
           this.adminService.avail = true;
           this.adminService.msg = "Successfully Edited a pizza!!!"
@@ -121,7 +121,7 @@ export class EditpizzaComponent implements OnInit {
     }
     else {
 
-      this.http.get<any>('https://database-wqgm.onrender.com/admin/editpizzawithoutimage?id=' + this.id + '&pizzaname=' + this.pn + '&pizzasize=' + this.ps + '&pizzaprice=' + this.pp
+      this.http.get<any>('https://backend-j2g3.onrender.com/admin/editpizzawithoutimage?id=' + this.id + '&pizzaname=' + this.pn + '&pizzasize=' + this.ps + '&pizzaprice=' + this.pp
       ).subscribe(
         (res) => {
           this.adminService.avail = true;
