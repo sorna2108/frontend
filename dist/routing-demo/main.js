@@ -738,7 +738,7 @@ class AdminService {
         this.http = http;
         this.avail = false;
         this.msg = "";
-        this.baseUri = "https://backend-for-food-app-sorna.onrender.com";
+        this.baseUri = "https://backend-for-food-app-sorna.onrender.com/admin";
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     check() {
@@ -3535,7 +3535,7 @@ class EditpizzaComponent {
             // console.log("yes image");
             formData.append('file', this.image);
             // *************
-            this.http.post('https://backend-for-food-app-sorna.onrender.com', formData).subscribe((res) => {
+            this.http.post('https://backend-for-food-app-sorna.onrender.com/admin/editpizzawithimage', formData).subscribe((res) => {
                 this.adminService.avail = true;
                 this.adminService.msg = "Successfully Edited a pizza!!!";
                 this.router.navigate(['/admin']);
