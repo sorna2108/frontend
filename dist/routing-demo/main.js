@@ -1688,7 +1688,7 @@ class AddpizzaComponent {
         formData.append('pizzaprice', f.controls.pizzaprice.value);
         this.http.post('..//https://backend-for-food-app-sorna.onrender.com/admin/addpizza', formData).subscribe((res) => {
             this.adminService.avail = true;
-            this.adminService.msg = "Successfully Added a pizza!!!";
+            this.adminService.msg = "Successfully Added a Food!!!";
             this.router.navigate(['/admin']);
             console.log(res);
         }, (error) => {
