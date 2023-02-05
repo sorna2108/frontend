@@ -1,8 +1,8 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AdminService } from '../../services/admin.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-addpizza',
@@ -13,8 +13,8 @@ export class AddpizzaComponent implements OnInit {
   msg: any = [];
   avail: boolean;
   onepizza: any;
-  image: any;
-  constructor(public http: HttpClient, public router: Router, public adminService: AdminService) { }
+  image;
+  constructor(private http: HttpClient, private router: Router, private adminService: AdminService) { }
 
   ngOnInit(): void {
     this.check()
@@ -49,19 +49,19 @@ export class AddpizzaComponent implements OnInit {
     formData.append('pizzaname', f.controls.pizzaname.value);
     formData.append('pizzasize', f.controls.pizzasize.value);
     formData.append('pizzaprice', f.controls.pizzaprice.value);
-    this.http.post<any>('http://localhost:3000/admin/addpizza', formData,).subscribe(
+    this.http.post<any>('http://localhost:3000/admin/addpizza', formData).subscribe(
       (res) => {
         this.adminService.avail = true;
-        this.adminService.msg = "Successfully Added a Food!!!"
+        this.adminService.msg = "Successfully Added a pizza!!!"
         this.router.navigate(['/admin']);
-        console.log(res)
+        // console.log(res)
       }
       ,
       (error) => {
 
         if (error instanceof HttpErrorResponse) {
 
-            this.router.navigate(['/admin'])
+            this.router.navigate(['/login'])
 
         }
         console.log(error);
