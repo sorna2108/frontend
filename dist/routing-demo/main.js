@@ -1686,14 +1686,14 @@ class AddpizzaComponent {
         formData.append('pizzaname', f.controls.pizzaname.value);
         formData.append('pizzasize', f.controls.pizzasize.value);
         formData.append('pizzaprice', f.controls.pizzaprice.value);
-        this.http.post('https://backend-for-food-app-sorna.onrender.com/admin/addpizza', formData).subscribe((res) => {
+        this.http.post('../https://backend-for-food-app-sorna.onrender.com/admin/addpizza', formData).subscribe((res) => {
             this.adminService.avail = true;
             this.adminService.msg = "Successfully Added a pizza!!!";
             this.router.navigate(['/admin']);
             // console.log(res)
         }, (error) => {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpErrorResponse"]) {
-                this.router.navigate(['/login']);
+                this.router.navigate(['/admin']);
             }
             console.log(error);
         });
